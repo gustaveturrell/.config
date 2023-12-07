@@ -76,7 +76,7 @@ return {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
     keys = {
-      { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
+      { "<Tab>",   "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
       { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
     },
     opts = {
@@ -112,7 +112,7 @@ return {
       require("incline").setup({
         highlight = {
           groups = {
-            InclineNormal = { guibg = colors.magenta500, guifg = colors.base04 },
+            InclineNormal = { guibg = colors.base3, guifg = colors.base04 },
             InclineNormalNC = { guifg = colors.violet500, guibg = colors.base03 },
           },
         },
@@ -151,14 +151,14 @@ return {
     event = "VimEnter",
     opts = function(_, opts)
       local logo = [[
-          .d88b.  888  888 .d8888b  
-          d88P"88b 888  888 88K      
-          888  888 888  888 "Y8888b. 
-          Y88b 888 Y88b 888      X88 
-          "Y88888  "Y88888  88888P' 
-              888                   
-          Y8b d88P                   
-          "Y88P"                   
+          .d88b.  888  888 .d8888b
+          d88P"88b 888  888 88K
+          888  888 888  888 "Y8888b.
+          Y88b 888 Y88b 888      X88
+          "Y88888  "Y88888  88888P'
+              888
+          Y8b d88P
+          "Y88P"
       ]]
 
       logo = string.rep("\n", 8) .. logo .. "\n\n"

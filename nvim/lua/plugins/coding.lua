@@ -20,26 +20,7 @@ return {
     cmd = "IncRename",
     config = true,
   },
-
-  -- Refactoring tool
-  {
-    "ThePrimeagen/refactoring.nvim",
-    keys = {
-      {
-        "<leader>r",
-        function()
-          require("refactoring").select_refactor()
-        end,
-        mode = "v",
-        noremap = true,
-        silent = true,
-        expr = false,
-      },
-    },
-    opts = {},
-  },
-
-  -- Go forward/backward with square brackets
+    -- Go forward/backward with square brackets
   {
     "echasnovski/mini.bracketed",
     event = "BufReadPost",

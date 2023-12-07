@@ -94,7 +94,6 @@ alias ll='eza -aliSgh --color=always --group-directories-first --icons --header 
 alias lt='eza -@alT --color=always --git'
 alias llt="eza --oneline --tree --icons --git-ignore"
 alias lr='eza -alg --sort=modified --color=always --group-directories-first --git'
-alias vim='nvim'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
