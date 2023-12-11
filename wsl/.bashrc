@@ -94,7 +94,6 @@ alias ll='eza -aliSgh --color=always --group-directories-first --icons --header 
 alias lt='eza -@alT --color=always --git'
 alias llt="eza --oneline --tree --icons --git-ignore"
 alias lr='eza -alg --sort=modified --color=always --group-directories-first --git'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
