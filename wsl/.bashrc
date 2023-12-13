@@ -98,6 +98,10 @@ alias lr='eza -alg --sort=modified --color=always --group-directories-first --gi
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+#alias
+
+alias c='clear'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -120,6 +124,8 @@ fi
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/gus.omp.json)"
+. $HOMEBREW_PREFIX/etc/profile.d/z.sh 
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
