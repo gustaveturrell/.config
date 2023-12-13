@@ -1,5 +1,6 @@
 /tmux/plugins/
-github-copilot/
+/github-copilot/
 /.mypy_cache/
 /lazygit/
-/nvim/lazy-lock.json
+*.json
+*.toml
