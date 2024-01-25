@@ -55,3 +55,5 @@
 [user]
 	email = gustaveturrell@icloud.com
 	name = gustaveturrell
+[init]
+	defaultBranch = main

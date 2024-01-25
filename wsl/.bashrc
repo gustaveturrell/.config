@@ -99,8 +99,14 @@ alias lr='eza -alg --sort=modified --color=always --group-directories-first --gi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 #alias
-
 alias c='clear'
+
+#AWS
+export ES_CLUSTER_BASE_URL='https://search-beehive-x42yh2dbgdz5yoznlyvud7qfla.us-west-2.es.amazonaws.com'
+escluster() {
+    local port="${1:-10000}" 
+    aws-es-proxy -listen localhost:"$port" -endpoint "$ES_CLUSTER_BASE_URL"
+}
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

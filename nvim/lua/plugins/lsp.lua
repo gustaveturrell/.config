@@ -32,18 +32,18 @@ return {
       local ensure_installed = {
         -- python
         "ruff-lsp", -- lsp
-        "ruff", -- linter (but used as formatter)
-        "pyright", -- lsp
-        "black", -- formatter
-        "mypy", -- linter
+        "ruff",     -- linter (but used as formatter)
+        "pyright",  -- lsp
+        "black",    -- formatter
+        "mypy",     -- linter
 
         -- lua
         "lua-language-server", -- lsp
-        "stylua", -- formatter
+        "stylua",              -- formatter
 
         -- shell
         "bash-language-server", -- lsp
-        "shfmt", -- formatter
+        "shfmt",                -- formatter
         -- "shellcheck",           -- linter
 
         -- yaml
@@ -93,9 +93,9 @@ return {
           filetypes = { "python" },
           command = prefer_bin_from_venv("black"),
         }),
-        diagnostics.mypy.with({
+        diagnostics.ruff.with({
           filetypes = { "python" },
-          command = prefer_bin_from_venv("mypy"),
+          command = prefer_bin_from_venv("ruff"),
         }),
 
         -- lua
@@ -141,7 +141,7 @@ return {
       formatters.isort.command = prefer_bin_from_venv("isort")
       formatters.black.command = prefer_bin_from_venv("black")
       formatters.stylua.args =
-        vim.list_extend({ "--indent-type", "Spaces", "--indent-width", "2" }, formatters.stylua.args)
+          vim.list_extend({ "--indent-type", "Spaces", "--indent-width", "2" }, formatters.stylua.args)
 
       local remove_from_formatters = {}
       local extend_formatters_with = {
@@ -161,11 +161,6 @@ return {
         opts.formatters_by_ft[ft] = opts.formatters_by_ft[ft] or {}
         vim.list_extend(opts.formatters_by_ft[ft], formatters_)
       end
-      -- replace opts.formatters_by_ft
-      for ft, formatters_ in pairs(replace_formatters_with) do
-        opts.formatters_by_ft[ft] = formatters_
-      end
-
       -- review opts.formatters_by_ft by uncommenting the below
       -- vim.api.nvim_echo(
       --   { { "opts.formatters_by_ft", "None" }, { vim.inspect(opts.formatters_by_ft), "None" } },
@@ -181,14 +176,14 @@ return {
     enabled = true,
     opts = function(_, opts)
       local linters = require("lint").linters
-      linters.mypy.cmd = prefer_bin_from_venv("mypy")
+      -- linters.mypy.cmd = prefer_bin_from_venv("mypy")
       linters.sqlfluff.args = vim.list_extend({ "--dialect", "postgres" }, linters.sqlfluff.args)
 
       local linters_by_ft = {
         -- this extends lazyvim's nvim-lint setup
         -- https://www.lazyvim.org/extras/linting/nvim-lint
         protobuf = { "buf", "protolint" },
-        python = { "mypy" },
+        -- python = { "mypy" },
         sh = { "shellcheck" },
         sql = { "sqlfluff" },
         yaml = { "yamllint" },
