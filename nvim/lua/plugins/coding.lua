@@ -13,14 +13,14 @@ return {
     },
     opts = { snippet_engine = "luasnip" },
   },
-
   -- Incremental rename
   {
     "smjonas/inc-rename.nvim",
-    cmd = "IncRename",
-    config = true,
+    config = function()
+      require("inc_rename").setup()
+    end,
   },
-    -- Go forward/backward with square brackets
+  -- Go forward/backward with square brackets
   {
     "echasnovski/mini.bracketed",
     event = "BufReadPost",
