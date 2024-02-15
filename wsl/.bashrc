@@ -104,8 +104,8 @@ alias c='clear'
 #AWS
 export ES_CLUSTER_BASE_URL='https://search-beehive-x42yh2dbgdz5yoznlyvud7qfla.us-west-2.es.amazonaws.com'
 escluster() {
-    local port="${1:-10000}" 
-    aws-es-proxy -listen localhost:"$port" -endpoint "$ES_CLUSTER_BASE_URL"
+	local port="${1:-10000}"
+	aws-es-proxy -listen localhost:"$port" -endpoint "$ES_CLUSTER_BASE_URL"
 }
 
 # Alias definitions.
@@ -130,8 +130,7 @@ fi
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/gus.omp.json)"
-. $HOMEBREW_PREFIX/etc/profile.d/z.sh 
-
+. $HOMEBREW_PREFIX/etc/profile.d/z.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
@@ -139,16 +138,15 @@ export NVM_DIR="$HOME/.nvm"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/gus/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/gus/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
 if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+	eval "$__conda_setup"
 else
-    if [ -f "/home/gus/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/gus/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/gus/miniconda3/bin:$PATH"
-    fi
+	if [ -f "/home/gus/miniconda3/etc/profile.d/conda.sh" ]; then
+		. "/home/gus/miniconda3/etc/profile.d/conda.sh"
+	else
+		export PATH="/home/gus/miniconda3/bin:$PATH"
+	fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
