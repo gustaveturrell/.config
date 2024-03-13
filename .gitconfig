@@ -38,7 +38,7 @@
   add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
 
 [github]
-	user = gustaveturrell
+	user = axeleto
 [diff]
   tool = nvimdiff
 [difftool "nvimdiff"]
